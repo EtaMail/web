@@ -1,0 +1,28 @@
+$primary: #777777 !default;
+//$primary-dark: #004a7f !default;
+////$primary-light: #c84540 !default;
+//$secondary: #c84540 !default;
+////$success: #72C281 !default;
+//$info: #d97f7b !default;
+////$warning: yellow !default;
+////$danger: red !default;
+//$light: #99afc0 !default;
+//$extra-light: #e5ebef !default;
+//$dark: #003862 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+                (
+                        'primary': $primary,
+                  //      'primary-dark': $primary-dark,
+                  //      'secondary': $secondary,
+                  ////'success': $success,
+                  //      'info': $info,
+                  ////'warning': $warning,
+                  ////'danger': $danger,
+                  //      'light': $light,
+                  //      'extra-light': $extra-light,
+                  //      'dark': $dark
+                ),
+                $theme-colors
+);

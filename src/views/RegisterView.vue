@@ -1,52 +1,61 @@
 <template>
-  <div class="m-3">
-    <h2>Registrazione</h2>
-
-    <b-form>
-      <div class="mb-2">
-        <span>Nome</span>
-        <b-form-input required v-model="user.name" />
+  <b-row style="height: 90vh">
+    <b-col cols="12" md="7">
+      <div class="my-auto">
+        <b-img src="./src/assets/images/explorator.png" class="w-100" alt="Registration"/>
       </div>
+    </b-col>
+    <b-col cols="12" md="5">
+      <b-card class="mx-auto mt-5" style="max-width: 30rem">
+        <h2>Registrazione</h2>
 
-      <div class="mb-2">
-        <span>Cognome</span>
-        <b-form-input v-model="user.surname" />
-      </div>
+        <b-form>
+          <div class="mb-2">
+            <span>Nome</span>
+            <b-form-input required v-model="user.name" />
+          </div>
 
-      <div class="mb-2">
-        <span>Email</span>
-        <b-form-input v-model="user.email" />
-      </div>
+          <div class="mb-2">
+            <span>Cognome</span>
+            <b-form-input v-model="user.surname" />
+          </div>
 
-      <div class="mb-2">
-        <span>Conferma email</span>
-        <b-form-input v-model="emailConfirmation" />
-      </div>
+          <div class="mb-2">
+            <span>Email</span>
+            <b-form-input v-model="user.email" />
+          </div>
 
-      <div class="mb-2">
-        <span>Password</span>
-        <b-form-input type="password" v-model="user.password" />
-      </div>
+          <div class="mb-2">
+            <span>Conferma email</span>
+            <b-form-input v-model="emailConfirmation" />
+          </div>
 
-      <div class="mb-2">
-        <span>Conferma password</span>
-        <b-form-input type="password" v-model="passwordConfirmation" />
-      </div>
+          <div class="mb-2">
+            <span>Password</span>
+            <b-form-input type="password" v-model="user.password" />
+          </div>
 
-      <b-button class="float-end" @click.prevent="register">Registrati</b-button>
-    </b-form>
+          <div class="mb-2">
+            <span>Conferma password</span>
+            <b-form-input type="password" v-model="passwordConfirmation" />
+          </div>
 
-  </div>
+          <b-button class="float-end my-2" @click.prevent="register" pill variant="primary">Registrati</b-button>
+        </b-form>
+
+      </b-card>
+    </b-col>
+  </b-row>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import {BButton, BForm, BFormInput} from "bootstrap-vue-3";
+import {BButton, BCol, BForm, BFormInput, BImg, BRow} from "bootstrap-vue-3";
 import { useAuthStore } from "@/stores/auth";
 
 export default defineComponent({
   name: "RegisterView",
-  components: {BButton, BFormInput, BForm},
+  components: {BImg, BCol, BRow, BButton, BFormInput, BForm},
   setup() {
     // eslint-disable-next-line no-undef
     const auth = useAuthStore();

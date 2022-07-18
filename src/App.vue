@@ -24,7 +24,12 @@ onMounted(() => {
 
 </script>
 
-<style>
+<style lang="scss">
+//@import "assets/variables"; // First our colors
+///*@import "assets/animations";*/
+//@import "../node_modules/bootstrap/scss/bootstrap";
+//@import "../node_modules/bootstrap-vue-3/src/styles/styles";
+
 @import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@1,300&family=Carter+One&family=Ubuntu:wght@300&display=swap');
 
 .el-font{

@@ -1,10 +1,7 @@
 <template>
-  <div class="login">
-
-    <h2 class="mt-5 text-center"> Login </h2>
-
+  <b-card class="mx-auto mt-5" style="max-width: 30rem">
+    <h2 class="text-center mb-4"> Login </h2>
     <b-form>
-
       <b-form-group
           id="input-group-1"
           label="Indirizzo email:"
@@ -39,22 +36,26 @@
 
 
       <div class="text-center">
-        <b-button class="text-center" @click="login">Login</b-button>
+        <b-button class="text-center" @click="login" pill variant="primary">Login</b-button>
       </div>
 
     </b-form>
 
-    <div class="m-5 text-center">
+    <div class="my-4">
       Non sei ancora registrato?
       <RouterLink to="/register"> Registrati</RouterLink>
     </div>
+  </b-card>
+
+  <div class="text-center">
+    <img src="../assets/images/bubble-gum-workflow.gif" alt="loginGif">
   </div>
 </template>
 
 <script setup lang="ts">
 import {ref} from "vue";
 import {useAuthStore} from "@/stores/auth";
-import {BButton, BForm, BFormInput} from "bootstrap-vue-3";
+import {BButton, BCard, BForm, BFormInput, BImg} from "bootstrap-vue-3";
 
 const user = ref({
   email: '',
